@@ -2,6 +2,7 @@ import java.sql.*;
 
 public class Main {
 
+    // Veritabanı bağlantı bilgileri
     public static final String DB_URL = "jdbc:mysql://localhost/employees";
     public static final String DB_USER = "root";
     public static final String DB_PASSWORD = "mysql";
@@ -10,14 +11,18 @@ public class Main {
 
         Connection connection = null;
 
-
         try {
+            // Veritabanına bağlantı sağla
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            Statement st = connection.createStatement();
-            String sql = "INSERT INTO employees (name,position,salary) VALUES (?,?,?)";
 
+            // SQL ifadesi hazırla
+            Statement st = connection.createStatement();
+            String sql = "INSERT INTO employees (name, position, salary) VALUES (?,?,?)";
+
+            // PreparedStatement oluştur
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
+            // Çalışan bilgilerini ekleyerek güncelle
             preparedStatement.setString(1, "Penelope Guiness");
             preparedStatement.setString(2, "Doctor");
             preparedStatement.setInt(3, 10000);
@@ -43,6 +48,7 @@ public class Main {
             preparedStatement.setInt(3, 15000);
             preparedStatement.executeUpdate();
 
+            // Veritabanından çalışan bilgilerini sorgula ve yazdır
             ResultSet resultSet = st.executeQuery("SELECT * FROM employees");
             System.out.println("--EMPLOYEE LIST--");
             while (resultSet.next()) {
@@ -51,15 +57,16 @@ public class Main {
                 System.out.println("Employee Name: " + resultSet.getString("name"));
                 System.out.println("Employee Position: " + resultSet.getString("position"));
                 System.out.println("Employee Salary: " + resultSet.getInt("salary"));
-
             }
 
+            // Kaynakları kapat
             preparedStatement.close();
             st.close();
             connection.close();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
 
+        } catch (SQLException e) {
+            // SQL istisnasını konsola yazdır
+            System.out.println(e.getMessage());
         }
 
     }
