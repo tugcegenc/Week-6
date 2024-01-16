@@ -14,7 +14,7 @@ public class Main {
             PrintWriter printWriter = new PrintWriter(fileWriter);
             printWriter.print(text);
 
-            // Close resources
+
             printWriter.close();
             fileWriter.close();
 
@@ -25,7 +25,6 @@ public class Main {
             // Print the content
             System.out.println("Content of the file: " + readText);
 
-            // Close resources
             br.close();
 
         } catch (IOException e) {
