@@ -20,6 +20,7 @@ public class Main {
             }
 
             System.out.println("Dosyadaki sayıların toplamı: " + total);
+            reader.close();
 
         } catch (IOException e) {
             // Dosya okuma hatası
