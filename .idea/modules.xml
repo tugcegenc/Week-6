@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JDBSDatabase/JDBSDatabase.iml" filepath="$PROJECT_DIR$/JDBSDatabase/JDBSDatabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notepad/Notepad.iml" filepath="$PROJECT_DIR$/Notepad/Notepad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReadNumbersFromFile/ReadNumbersFromFile.iml" filepath="$PROJECT_DIR$/ReadNumbersFromFile/ReadNumbersFromFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/Week-6.iml" filepath="$PROJECT_DIR$/Week-6.iml" />
     </modules>
   </component>
